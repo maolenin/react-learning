@@ -1,4 +1,4 @@
-import React from 'react';
+import React from23 'react';
 import './EventPlanner.css'; // Import CSS file for styling
 import Footer from './Footer';
 
