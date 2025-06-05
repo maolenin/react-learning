@@ -1,16 +1,16 @@
 import React from 'react';
-import './ShoppingCart.css'; 
-import {useDispatch, useSeletor} from 'react-redux';
+import { useDispatch, useSelector} from 'react-redux';
 import { removeItemFromCart, clearCart, increaseItemQuantity, decreaseItemQuantity} from './CartSlice'; 
+import './ShoppingCart.css'; 
 
 const ShoppingCart = () => {
 
   const dispatch = useDispatch();
   const cartItems = useSelector(state => state.cart.cartItems);
-  const totalAmount = cartItems.reduce((total, item) => total + item.price * item,quantity, 0);
+  const totalAmount = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
 
-  const handleRemoveItem = itemid => {
-      dispatch(removeItemFromCart)
+  const handleRemoveItem = itemId => {
+      dispatch(removeItemFromCart(itemId));
       };
   
   const handleClearCart = () => {
@@ -36,14 +36,15 @@ const ShoppingCart = () => {
           <div className="quantity-controls">
             <button className="quantity-control-btn" onClick={() => handleDecreaseQuantity(item.id)}>-</button>
             <span> {item.quantity} </span>
-            <button className="quantity-control-btn" onClick={() => handleDecreaseQuantity(item.id)}>+</button>
+            <button className="quantity-control-btn" onClick={() => handleIncreaseQuantity(item.id)}>+</button>
           </div>
           <button className="remove-item-btn" onClick={() => handleRemoveItem(item.id)}>Remove</button>
         </li>
         ))} 
       </ul>
-      <button className="clear-cart-btn" >Clear Cart</button>
+      <button className="clear-cart-btn" onClick={handleClearCart} >Clear Cart</button>
     </div>
+    <div>{totalAmount ? <div>'The total amount is {totalAmount}'</div> : ''}</div>
   
     </>
   );

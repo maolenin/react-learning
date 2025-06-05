@@ -29,14 +29,14 @@ const ProductList = () => {
               <span>{product.name} - ${product.price}</span>
               <button
                 className={`add-to-cart-btn ${isAlreadyInCart ? 'disabled' : ''}`}
-                onclick={() => handleAddToCart(product)}
+                onClick={() => handleAddToCart(product)}
                 disabled={isAlreadyInCart}
                 >
-                {isAlreadyInCart ? 'added' : 'Add to Cart'}
-            </button>
-          </li>
-        );
-         })}
+		{isAlreadyInCart ? 'Added' : 'Add to Cart'}
+              </button>
+            </li>
+            );
+	})}
       </ul>
     </div>
   );
