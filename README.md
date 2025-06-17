@@ -240,7 +240,6 @@ export default ArrayComponent;
 
 ### Inline style in react	
 Inline style can be applied within the tag as an attribute within double curly braces	
->>>>>>> ff844cf631f89213ecbd7f39d896aea540829f2a
 ```jsx
 import React from 'react';
 function MyComponent() {
