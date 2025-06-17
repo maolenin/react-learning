@@ -11,12 +11,19 @@ cd YOUR_REPO
 ```
 
 ### Add external repo into an existing repo
+
+external_code: name of the new folder into your repo
 ```
 git remote add external https://github.com/EXTERNAL_USER/EXTERNAL_REPO.git
 git fetch external
 git read-tree --prefix=external_code/ -u external/main
 git commit -m "Imported external repo into external_code folder"
 git push origin main
+```
+
+If external already exists:
+```
+git remote remove external
 ```
 
 ## Cheat Sheet: Understanding Function Components with Array and DOM Manipulation
