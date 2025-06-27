@@ -47,6 +47,19 @@ body {
     align-items: center;
     justify-content: center;
 }
+.product-category {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    /* background-color: pink; */
+    /* justify-content: space-between; */
+    padding: 20px;
+    width: 100%;
+    /*align-items: center;*/
+    justify-content: center;
+    border-top: 2px solid #333;
+}
+
 .product-list {
     display: flex;
     flex-wrap: wrap;
