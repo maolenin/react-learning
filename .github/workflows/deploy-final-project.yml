@@ -23,7 +23,7 @@ jobs:
       - name: Install dependencies and build
         run: |
           cd FinalProject/ # Corrected path
-          npm install # or yarn install
+          npm ci # or yarn install
           npm run build # or yarn build
         env:
           CI: true
