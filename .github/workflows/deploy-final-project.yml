@@ -1,0 +1,37 @@
+name: Deploy FinalProject to GitHub Pages
+
+on:
+  push:
+    branches:
+      - master # Or 'main', depending on your default branch name
+    paths:
+      - 'FinalProject/**' # Corrected path based on your ls output
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18' # You can adjust this to your project's Node.js version
+
+      - name: Install dependencies and build
+        run: |
+          cd FinalProject/ # Corrected path
+          npm install # or yarn install
+          npm run build # or yarn build
+        env:
+          CI: true
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./FinalProject/build # Corrected path
+          # Ensure your FinalProject/package.json has the correct homepage:
+          # "homepage": "https://<YOUR_USERNAME>.github.io/<YOUR_REPO_NAME>/",
