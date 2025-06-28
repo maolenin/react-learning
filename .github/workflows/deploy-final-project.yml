@@ -3,7 +3,7 @@ name: Deploy FinalProject to GitHub Pages
 on:
   push:
     branches:
-      - master # Or 'main', depending on your default branch name
+      - main # Or 'master', depending on your default branch name
     paths:
       - 'FinalProject/**' # Corrected path based on your ls output
 
