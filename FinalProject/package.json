@@ -4,10 +4,10 @@
   "version": "0.1.0",
   "homepage": "https://maolenin.github.io/react-learning/",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "vite", 
+    "build": "vite build", 
+    "test": "vitest",     
+    "eject": "vite eject" 
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.3",
