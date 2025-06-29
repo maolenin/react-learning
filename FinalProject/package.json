@@ -2,12 +2,13 @@
   "name": "final-project",
   "private": true,
   "version": "0.1.0",
+  "type": "module",
   "homepage": "https://maolenin.github.io/react-learning/",
   "scripts": {
-    "start": "vite", 
+    "dev": "vite", 
     "build": "vite build", 
-    "test": "vitest",     
-    "eject": "vite eject" 
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite build && vite preview --host"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.3",
