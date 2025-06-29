@@ -32,6 +32,6 @@ jobs:
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./FinalProject/build # Corrected path
+          publish_dir: ./FinalProject/dist # Corrected path
           # Ensure your FinalProject/package.json has the correct homepage:
-          # "homepage": "https://<YOUR_USERNAME>.github.io/<YOUR_REPO_NAME>/",
+          # "homepage": "https://maolenin.github.io/react-learning/",
